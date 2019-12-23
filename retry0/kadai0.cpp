@@ -3,13 +3,17 @@ using namespace std;
 using namespace cv;
 
 int main() {
-	Mat image;
-	image = imread("E:\\opencv320\\data\\mouse.jpg");
-	if (image.empty()) {
+	Mat colorImage;
+	colorImage = imread("E:\\opencv320\\data\\mouse.jpg");
+	if (colorImage.empty()) {
 		printf("failed load image");
 		return -1;
 	}
-	imshow("Display Window", image);
+	imshow("Display Window", colorImage);
+	waitKey(0);
+	Mat binaryImage;
+	cvtColor(colorImage, binaryImage, COLOR_BGR2GRAY);
+	imshow("Display Window", binaryImage);
 	waitKey(0);
 	return 0;
 }
