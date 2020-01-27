@@ -4,6 +4,7 @@ using namespace cv;
 
 int main1() {
 	Mat colorImage;
+	colorImage = imread("E:\\opencv320\\data\\mouse.jpg", 0);
 	colorImage = imread("E:\\opencv320\\data\\mouse.jpg");
 	if (colorImage.empty()) {
 		printf("failed load image");
